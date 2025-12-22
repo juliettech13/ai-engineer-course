@@ -1,4 +1,4 @@
-# Marketing Agent - Day 1
+# How to build an AI Agent - Day 1
 
 > **Welcome to Day 1!** Over the next 7 days, you'll build a smart AI agent that analyzes GitHub repositories and generates marketing content ideas for developer-focused products.
 
