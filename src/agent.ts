@@ -2,12 +2,13 @@ import OpenAI from "openai";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Set up Helicone AI Gateway so you can call any model with the same OpenAI SDK
+// 1. Set up the OpenAI client (but pointed at Helicone)
 const client = new OpenAI({
   baseURL: "https://ai-gateway.helicone.ai",
   apiKey: process.env.HELICONE_API_KEY
 });
 
+// 2. Create a function that analyzes a GitHub repo
 async function analyzeRepo(repoUrl: string) {
   const response = await client.chat.completions.create({
     model: "gpt-4o-mini", // Fast, cheap, good enough for testing
@@ -27,7 +28,7 @@ async function analyzeRepo(repoUrl: string) {
   return response.choices[0]?.message.content;
 }
 
-// Test it
+// 3. Test it with the Helicone repository
 analyzeRepo("https://github.com/helicone/helicone")
   .then((result) => console.log(result))
   .catch((err) => console.error(err));
