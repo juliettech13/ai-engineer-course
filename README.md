@@ -1,6 +1,6 @@
 # How to Build an AI Agent
 
-Over the next 7 branches, we'll build a hybrid agent and workflow system that analyzes GitHub repositories and generates marketing content. System reads repos (code, commits, README), decides content type, generates drafts, and emails weekly ideas.
+Over the next 7 days, we'll build a hybrid agent and workflow system that analyzes GitHub repositories and generates marketing content. System reads repos (code, commits, README), decides content type, generates drafts, and emails weekly ideas.
 
 ## Day 1: Setup & First LLM Request
 
@@ -9,7 +9,6 @@ Learn agents vs workflows, set up TypeScript + OpenAI, make your first LLM reque
 ## Agents vs Workflows
 
 Most "agents" today aren't agents at all. they're workflows that call an LLM.
-
 
 **Workflows**: Predetermined paths. You define steps, LLM fills blanks.
 ```
@@ -27,10 +26,6 @@ Input → Think → Act → Observe → Think → Act → ... → Output
 ❌ Unpredictable    ❌ Hard to debug     ❌ Higher cost
 ```
 
-**When to use:**
-- **Workflows**: Known steps, reliability matters, optimizing cost, can enumerate paths
-- **Agents**: Variable user intent, requires reasoning, self-correction needed, unpredictable edge cases
-
 | Use Workflows When | Use Agents When |
 |-------------------|-----------------|
 | Steps are known upfront | User intent varies wildly |
@@ -38,9 +33,9 @@ Input → Think → Act → Observe → Think → Act → ... → Output
 | You're optimizing for cost | Self-correction is key |
 | You can enumerate all paths | You can't predict all edge cases |
 
-### Our Hybrid Architecture
+### Hybrid Architecture
 
-Throughout this tutorial, we'll build what's known as a **hybrid approach** :
+For our marketing agent, we'll build what's known as a **hybrid approach** :
 - **Workflows** for predictable tasks (fetching GitHub data, posting content)
 - **Agent loops** for creative decisions (what to write about, how to frame it)
 
@@ -136,21 +131,6 @@ npx tsx src/agent.ts
 
 **View logs:** [https://us.helicone.ai/dashboard](https://us.helicone.ai/dashboard)
 
-## How It Works
-
-Request flow:
-```
-Your Code → Helicone Gateway → OpenAI → Response
-                    ↓
-          Logging + Observability
-```
-
-AI Gateway benefits:
-- Switch models instantly (100+ models, one API key)
-- Automatic observability (no logging code)
-- Provider failover (auto-fallback if provider down)
-- Cost optimization (built-in caching, up to 90% savings)
-
 ## Project Structure (Days 1-7)
 
 ```
@@ -173,14 +153,6 @@ marketing-agent/
 └── tsconfig.json          # TypeScript config
 ```
 
-## Dependencies
-
-- **openai** - OpenAI SDK (works with any LLM through Helicone)
-- **dotenv** - Loads `.env` variables
-- **typescript** - Type safety
-- **tsx** - Fast TypeScript execution (no build step)
-- **@types/node** - Node.js types
-
 ## Troubleshooting
 
 **Missing API key error:**
@@ -200,14 +172,6 @@ marketing-agent/
 
 **401 Unauthorized:**
 - Generate new API key at [https://us.helicone.ai/settings/api-key](https://us.helicone.ai/settings/api-key)
-
-## Day 1 Complete
-
-Verify:
-- Working `src/agent.ts` file
-- Can run `npx tsx src/agent.ts` and see output
-- Request visible in [Helicone dashboard](https://us.helicone.ai/dashboard)
-- Understand agents vs workflows
 
 ## Resources
 
