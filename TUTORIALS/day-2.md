@@ -165,7 +165,7 @@ async function executeStep(
 
     case "action":
       const response = await client.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "gemma-3-12b-it",
         messages: [
           {
             role: "user",

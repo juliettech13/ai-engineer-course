@@ -5,7 +5,7 @@ import { fetchRepoContext } from "./github";
 
 const client = new OpenAI({
   baseURL: "https://ai-gateway.helicone.ai",
-  apiKey: process.env.HELICONE_API_KEY,
+  apiKey: process.env.HELICONE_API_KEY
 });
 
 export async function runAgent(repoFullName: string) {
@@ -41,7 +41,7 @@ async function executeStep(
 
     case "action":
       const response = await client.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "gemma-3-12b-it",
         messages: [
           {
             role: "user",
