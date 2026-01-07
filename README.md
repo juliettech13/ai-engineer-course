@@ -10,7 +10,6 @@ By the end of this course, you'll have built a **hybrid agent and workflow syste
 - Generates high-quality drafts
 - Runs on a schedule to email weekly content ideas
 
-
 ## How to Use This Repository
 
 ### Follow These Steps:
@@ -22,8 +21,8 @@ By the end of this course, you'll have built a **hybrid agent and workflow syste
 
 2. **Open the tutorial for your day**
    ```bash
-   # Navigate to TUTORIALS/ folder and open your day's file
-   # For example: TUTORIALS/day-1.md
+   # Navigate to TUTORIALS/ folder and open your day\'s file. For example:
+   cd TUTORIALS/day-1.md
    ```
 
 3. **Follow the tutorial**
@@ -41,7 +40,7 @@ By the end of this course, you'll have built a **hybrid agent and workflow syste
 - **Day 2**: Building the Agent Loop
 - **Day 3**: Tool Calling & Actions
 - **Day 4**: Memory & Context Management
-- **Day 5**: Error Handling & Retry Logic
+- **Day 5**: MCP & Posting to Typefully
 - **Day 6**: Monitoring & Observability
 - **Day 7**: Production Deployment
 
@@ -156,11 +155,12 @@ This course teaches you to build a **hybrid approach**:
 - Token optimization
 - State persistence
 
-### Day 5: Error Handling & Retry Logic
-- Graceful degradation
-- Exponential backoff
-- Rate limit handling
-- Fallback strategies
+### Day 5: MCP & Posting to Typefully
+- Model Context Protocol (MCP) introduction
+- Connecting to external tools via MCP
+- Typefully integration for social media posting
+- Multi-step tool calling loops
+- MCP client setup and management
 
 ### Day 6: Monitoring & Observability
 - Performance metrics
@@ -187,6 +187,7 @@ marketing-agent/
 │   ├── github.ts          # GitHub API integration
 │   ├── tools.ts           # Tool definitions & execution
 │   ├── memory.ts          # Conversation history management
+│   ├── mcp.ts             # MCP client for external tools (Typefully)
 │   └── monitor.ts         # Performance tracking
 │
 ├── api/
